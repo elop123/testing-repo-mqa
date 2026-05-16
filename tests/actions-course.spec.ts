@@ -41,4 +41,44 @@ await expect(disabledOption).not.toBeChecked();
 await expect(disabledOption).toBeDisabled();
  
 });
+
+//ex3.
+
+test('checkboxes- action', async ({ page }) => {
+ 
+const checkboxes = [
+  page.locator('nb-card').filter({ hasText: 'Inline form' }).getByRole('checkbox', { name: 'Remember me' }),
+  page.locator('nb-card').filter({ hasText: 'Basic form' }).getByRole('checkbox', { name: 'Check me out' }),
+  page.locator('nb-card').filter({ hasText: 'Horizontal form' }).getByRole('checkbox', { name: 'Remember me' })
+];
+
+await test.step('check all checkboxes', async () => {
+for (const checkbox of checkboxes) {
+await checkbox.check({ force: true });
+await expect(checkbox).toBeChecked();
+}
+});
+
+await test.step('setChecked on the middle one only', async () => {
+await checkboxes[1].setChecked(false, { force: true });
+await expect(checkboxes[0]).toBeChecked();
+await expect(checkboxes[1]).not.toBeChecked();
+await expect(checkboxes[2]).toBeChecked();
+});
+
+await test.step('toggle every checkbox', async () => {
+  for (const checkbox of checkboxes) {
+    const isChecked = await checkbox.isChecked();
+    await checkbox.setChecked(!isChecked, { force: true });
+  }
+});
+
+await test.step('uncheck all checkboxes', async () => {
+  for (const checkbox of checkboxes) {
+    await expect(checkboxes[0]).not.toBeChecked(); 
+    await expect(checkboxes[1]).toBeChecked();     
+    await expect(checkboxes[2]).not.toBeChecked()
+  }
+});
+});
 });
