@@ -75,9 +75,7 @@ await test.step('toggle every checkbox', async () => {
 
 await test.step('uncheck all checkboxes', async () => {
   for (const checkbox of checkboxes) {
-    await expect(checkboxes[0]).not.toBeChecked(); 
-    await expect(checkboxes[1]).toBeChecked();     
-    await expect(checkboxes[2]).not.toBeChecked()
+    await expect(checkbox).not.toBeChecked(); 
   }
 });
 });
