@@ -1,5 +1,4 @@
-import { Locator, Page } from 'playwright';
-import { expect } from 'playwright/test';
+import { Locator, Page, expect } from '@playwright/test';
 
 export abstract class BaseFormComponent {
   readonly page: Page;

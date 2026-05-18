@@ -2,8 +2,9 @@ import {Page} from 'playwright';
 import {test as base} from '@playwright/test';
 import {BasicFormComponent} from '../support/components/forms/BasicFormComponent';
 import {UsingGridComponent} from '../support/components/forms/UsingGridComponent';
-import {InlineFormComponent} from '../support/components/forms/InlineFormComponent';
 import {ApplicationURLs} from '../support/main/ApplicationURLs';
+import {InlineFormComponent} from '../support/components/forms/InlineFormComponent';
+
 
 
 

@@ -1,6 +1,5 @@
-import { Locator, Page } from 'playwright';
 import { BaseFormComponent } from './BaseFormComponent';
-import { expect } from 'playwright/test';
+import { Locator, Page, expect } from '@playwright/test';
 
 export type GridRadioOptions = 'option1' | 'option2' | 'disabledOption';
 
