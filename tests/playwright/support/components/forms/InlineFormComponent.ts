@@ -12,8 +12,8 @@ export class InlineFormComponent extends BaseFormComponent {
     super(page, 'inline-form-card');
     this.inlineNameInput = this.card.getByTestId('name-input');
     this.inlineEmailInput = this.card.getByTestId('email-input');
-    this.inlineRememberMeCheckbox = this.card.getByTestId('remember-me-checkbox');
-    this.inlineSubmitButton = this.card.getByTestId('submit-btn');
+    this.inlineRememberMeCheckbox = this.card.getByTestId('remember-me-checkbox').locator('input[type="checkbox"]');
+
   }
 
   async fillName(value: string) {
@@ -29,7 +29,5 @@ export class InlineFormComponent extends BaseFormComponent {
     await expect(this.inlineRememberMeCheckbox).toBeChecked();
   }
 
-  async submit() {
-    await this.inlineSubmitButton.click();
-  }
+ 
 }

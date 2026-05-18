@@ -4,6 +4,7 @@ import { BasicFormComponent } from '../../support/components/forms/BasicFormComp
 import { UsingGridComponent } from '../../support/components/forms/UsingGridComponent';
 import { InlineFormComponent } from '../../support/components/forms/InlineFormComponent';
 import { ApplicationURLs } from '../../support/main/ApplicationURLs';
+import { FormWithoutLabelsComponent } from '../../support/components/forms/FormWithoutLabelsComponent';
 
 test.describe('Form Layouts page', () => {
   test('user should be able to complete the basic form and submit it', async ({
@@ -78,6 +79,78 @@ test.describe('Form Layouts page', () => {
 
     await test.step('Submit the form', async () => {
       await onInlineForm.submit();
+    });
+  });
+
+  test('user should be able to complete the form without labels and submit it', async ({
+    onApplicationURLs,
+    onFormWithoutLabels,
+  }) => {
+    const testRecipient = 'John Doe';
+    const testSubject = 'Test Subject';
+    const testTextarea = 'Test Message';
+
+    await test.step('Navigate to the form layouts page', async () => {
+      await onApplicationURLs.navigateToFormsLayouts();
+    });
+
+    await test.step('Complete the form without labels', async () => {
+      await onFormWithoutLabels.assertVisibility(true);
+      await onFormWithoutLabels.fillRecipient(testRecipient);
+      await onFormWithoutLabels.fillSubject(testSubject);
+      await onFormWithoutLabels.fillTextarea(testTextarea);
+    });
+
+    await test.step('Submit the form', async () => {
+      await onFormWithoutLabels.submit();
+    });
+  });
+
+  test('user should be able to complete the block form and submit it', async ({
+    onApplicationURLs,
+    onBlockForm,
+  }) => {
+    const testFirstName = 'Jane';
+    const testLastName = 'Doe';
+    const testEmail = 'test@test.com';
+    const testWebsite = 'https://test.com';
+
+    await test.step('Navigate to the form layouts page', async () => {
+      await onApplicationURLs.navigateToFormsLayouts();
+    });
+
+    await test.step('Complete the block form', async () => {
+      await onBlockForm.assertVisibility(true);
+      await onBlockForm.fillFirstName(testFirstName);
+      await onBlockForm.fillLastName(testLastName);
+      await onBlockForm.fillEmail(testEmail);
+      await onBlockForm.fillWebsite(testWebsite);
+    });
+
+    await test.step('Submit the form', async () => {
+      await onBlockForm.submit();
+    });
+  });
+
+  test('user should be able to complete the horizontal form and submit it', async ({
+    onApplicationURLs,
+    onHorizontalForm,
+  }) => {
+    const testEmail = 'test@test.com';
+    const testPassword = 'password';
+
+    await test.step('Navigate to the form layouts page', async () => {
+      await onApplicationURLs.navigateToFormsLayouts();
+    });
+
+    await test.step('Complete the horizontal form', async () => {
+      await onHorizontalForm.assertVisibility(true);
+      await onHorizontalForm.fillEmail(testEmail);
+      await onHorizontalForm.fillPassword(testPassword);
+    });
+
+    await test.step("Toggle the 'Remember me' checkbox", async () => {
+      await onHorizontalForm.toggleRememberMe();
     });
   });
 });

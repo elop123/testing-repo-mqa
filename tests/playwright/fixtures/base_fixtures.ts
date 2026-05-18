@@ -1,11 +1,12 @@
-import {Page} from 'playwright';
+import {Page} from '@playwright/test';
 import {test as base} from '@playwright/test';
 import {BasicFormComponent} from '../support/components/forms/BasicFormComponent';
 import {UsingGridComponent} from '../support/components/forms/UsingGridComponent';
 import {ApplicationURLs} from '../support/main/ApplicationURLs';
 import {InlineFormComponent} from '../support/components/forms/InlineFormComponent';
-
-
+import {FormWithoutLabelsComponent} from '../support/components/forms/FormWithoutLabelsComponent';
+import {BlockFormComponent} from '../support/components/forms/BlockFormComponent';
+import {HorizontalFormComponent} from '../support/components/forms/HorizontalFormComponent';
 
 
 type MyFixtures = {
@@ -13,6 +14,9 @@ onBasicForm: BasicFormComponent;
 onGridForm: UsingGridComponent;
 onInlineForm: InlineFormComponent;
 onApplicationURLs: ApplicationURLs;
+onFormWithoutLabels: FormWithoutLabelsComponent;
+onBlockForm: BlockFormComponent;
+onHorizontalForm: HorizontalFormComponent;
 }
 
 const createFixture = <T>(Component: new (page: Page) => T) => {
@@ -26,6 +30,9 @@ onBasicForm: [createFixture(BasicFormComponent), { scope: 'test' }],
 onGridForm: [createFixture(UsingGridComponent), { scope: 'test' }],
 onInlineForm: [createFixture(InlineFormComponent), { scope: 'test' }],
 onApplicationURLs: [createFixture(ApplicationURLs), { scope: 'test' }],
+onFormWithoutLabels: [createFixture(FormWithoutLabelsComponent), { scope: 'test' }],
+onBlockForm: [createFixture(BlockFormComponent), { scope: 'test' }],
+onHorizontalForm: [createFixture(HorizontalFormComponent), { scope: 'test' }]
 });
 
 export {expect} from '@playwright/test';
