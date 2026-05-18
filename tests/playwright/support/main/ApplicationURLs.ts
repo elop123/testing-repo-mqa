@@ -2,6 +2,7 @@ import {Page} from 'playwright';
 import { BaseFormComponent } from '../components/forms/BaseFormComponent';
 import { BasicFormComponent } from '../components/forms/BasicFormComponent';
 
+
 export class ApplicationURLs {
   readonly page: Page;
 
@@ -14,5 +15,7 @@ export class ApplicationURLs {
 
     const basicForm = new BasicFormComponent(this.page);
     await basicForm.assertVisibility(true);
+
+   
   }
 }
