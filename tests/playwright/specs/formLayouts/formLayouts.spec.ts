@@ -2,6 +2,7 @@ import { test } from '../../fixtures/base_fixtures';
 import { expect } from '@playwright/test';
 import { BasicFormComponent } from '../../support/components/forms/BasicFormComponent';
 import { UsingGridComponent } from '../../support/components/forms/UsingGridComponent';
+import { InlineFormComponent } from '../../support/components/forms/InlineFormComponent';
 import { ApplicationURLs } from '../../support/main/ApplicationURLs';
 
 test.describe('Form Layouts page', () => {
@@ -51,6 +52,32 @@ test.describe('Form Layouts page', () => {
 
     await test.step('Submit the form', async () => {
       await onGridForm.submit();
+    });
+  });
+
+  test('user should be able to complete the inline form and submit it', async ({
+    onApplicationURLs,
+    onInlineForm,
+  }) => {
+    const testName = 'Jane Doe';
+    const testEmail = 'test@test.com';
+
+    await test.step('Navigate to the form layouts page', async () => {
+      await onApplicationURLs.navigateToFormsLayouts();
+    });
+
+    await test.step('Complete the inline form', async () => {
+      await onInlineForm.assertVisibility(true);
+      await onInlineForm.fillName(testName);
+      await onInlineForm.fillEmail(testEmail);
+    });
+
+    await test.step('Toggle the "Remember me" checkbox', async () => {
+      await onInlineForm.toggleRememberMe();
+    });
+
+    await test.step('Submit the form', async () => {
+      await onInlineForm.submit();
     });
   });
 });

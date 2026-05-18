@@ -11,7 +11,7 @@ export abstract class BaseFormComponent {
   protected constructor(page: Page, cardTestId: string) {
     this.page = page;
     this.card = this.page.getByTestId(cardTestId);
-    this.submitButton = this.card.getByTestId('submit-button');
+    this.submitButton = this.card.getByTestId('submit-btn');
   }
 
   async assertVisibility(visibility = true) {
