@@ -15,7 +15,7 @@ test.describe('Modal && Overlays', () => {
     await openModalButton.click();
     });
 
-    await test.step('verify modal is visible', async () => {
+    await test.step('Verify modal is visible', async () => {
     await expect(modal).toBeVisible();
     await expect(modal).toContainText('Window');
     });
