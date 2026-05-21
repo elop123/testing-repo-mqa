@@ -11,6 +11,7 @@
     "start": "ng serve",
     "test": "playwright test",
     "test:visual": "playwright test --config=playwright-visual.config.ts",
+    "test:visual:ui": "playwright test --config playwright-visual.config.ts --ui",
     "format": "prettier --write \"src/**/*.{ts,html,scss,json}\" \"tests/**/*.ts\" \"*.ts\"",
     "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\" \"tests/**/*.ts\" \"*.ts\""
   },
@@ -73,7 +74,7 @@
     "@argos-ci/playwright": "^4.3.0",
     "@faker-js/faker": "^10.3.0",
     "@fortawesome/fontawesome-free": "^5.2.0",
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.60.0",
     "@types/leaflet": "1.2.3",
     "@types/node": "^12.12.70",
     "allure-playwright": "^3.6.0",

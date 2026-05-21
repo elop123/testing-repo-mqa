@@ -14,7 +14,22 @@ export class ApplicationURLs {
 
     const basicForm = new BasicFormComponent(this.page);
     await basicForm.assertVisibility(true);
-
-   
   }
+
+  async navigateToLoginPage() {
+    await this.page.goto('/auth/login', { waitUntil: 'domcontentloaded' });
+  }
+
+  async navigateToRegisterPage() {
+    await this.page.goto('/auth/register', { waitUntil: 'domcontentloaded' });
+  }
+
+  async navigateToRequestPasswordPage() {
+    await this.page.goto('/auth/request-password', { waitUntil: 'domcontentloaded' });
+  }
+
+  async navigateToResetPasswordPage() {
+    await this.page.goto('/auth/reset-password', { waitUntil: 'domcontentloaded' });
+  }
+
 }
