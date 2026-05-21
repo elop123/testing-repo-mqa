@@ -15,7 +15,6 @@
     "target": "es2022",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["node"],
     "typeRoots": [
       "node_modules/@types"
     ],
