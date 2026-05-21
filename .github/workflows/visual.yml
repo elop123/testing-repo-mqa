@@ -17,7 +17,7 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps chromium
-    - name: Run Visual Tests
+    - name: Run Playwright Visual Tests
       run: npx playwright test:visual
       env:ARGOS_TOKEN: ${{ secrets.ARGOSCI }}
     - uses: actions/upload-artifact@v4
