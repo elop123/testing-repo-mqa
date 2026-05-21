@@ -8,7 +8,7 @@ await onApplicationURLs.navigateToCalendarPage();
 await argosComponentScreenshot({ 
     page, 
     snapshotName: 'Calendar component',
-    selector: page.locator('nb-calendar') });
+    selector: page.locator('nb-calendar').first() });
 });
 });
 
