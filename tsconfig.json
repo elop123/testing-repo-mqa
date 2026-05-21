@@ -8,7 +8,7 @@
     "module": "es2022",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "strict":false,
+    "strict":true,
     "declaration": false,
     "moduleResolution": "node",
     "experimentalDecorators": true,

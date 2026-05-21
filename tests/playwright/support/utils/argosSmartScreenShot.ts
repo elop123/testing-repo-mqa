@@ -1,4 +1,4 @@
-import { Locator, Page } from 'playwright/test';
+import { Locator, Page } from '@playwright/test';
 import { argosScreenshot } from '@argos-ci/playwright';
 import { argosCustomStyles } from './argosStyles';
 
