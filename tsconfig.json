@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "strictNullChecks": false,
-    "ignoreDeprecations":"6.0",
+    "ignoreDeprecations":"5.0",
     "noImplicitAny": false,
     "strictPropertyInitialization": false,
     "importHelpers": true,
