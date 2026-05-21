@@ -32,4 +32,8 @@ export class ApplicationURLs {
     await this.page.goto('/auth/reset-password', { waitUntil: 'domcontentloaded' });
   }
 
+  async navigateToCalendarPage() {
+    await this.page.goto('/pages/extra-components/calendar', { waitUntil: 'domcontentloaded' });
+  }
+
 }
