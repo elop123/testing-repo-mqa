@@ -88,18 +88,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-admin-demo:build"
+            "buildTarget": "ngx-admin-demo:build" 
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-admin-demo:build:production"
+              "buildTarget": "ngx-admin-demo:build:production" 
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-admin-demo:build"
+            "buildTarget": "ngx-admin-demo:build" 
           }
         },
         "test": {
@@ -149,7 +149,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "ngx-admin-demo:serve"
+            "buildTarget": "ngx-admin-demo:serve" 
           }
         }
       }
