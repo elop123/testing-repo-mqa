@@ -36,4 +36,12 @@ export class ApplicationURLs {
     await this.page.goto('/pages/extra-components/calendar', { waitUntil: 'domcontentloaded' });
   }
 
+  async navigateToTablesAndDataPage() {
+    await this.page.goto('/pages/tables/smart-table', { waitUntil: 'domcontentloaded' });
+  }
+
+  async navigateToChartsPage() {
+    await this.page.goto('/pages/charts/echarts', { waitUntil: 'domcontentloaded' });
+  }
+
 }
