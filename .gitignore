@@ -49,3 +49,7 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
