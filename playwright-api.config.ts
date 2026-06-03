@@ -2,7 +2,7 @@ import { defineConfig} from '@playwright/test';
 import baseConfig from './playwright.config';
 
 
-const API_BASE_URL = process.env.API_BASE_URL ?? 'http://goal-tracker-api.onrender.com';
+const API_BASE_URL = process.env.API_BASE_URL ?? 'https://goal-tracker-api.onrender.com';
 
 export default defineConfig({
   ...baseConfig,
