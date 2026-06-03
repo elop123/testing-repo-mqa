@@ -10,7 +10,8 @@
     "ng": "ng",
     "start": "ng serve",
     "format": "prettier --write \"src/**/*.{ts,html,scss,json}\" \"tests/**/*.ts\" \"*.ts\"",
-    "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\" \"tests/**/*.ts\" \"*.ts\""
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\" \"tests/**/*.ts\" \"*.ts\"",
+    "test api":"playwright test --config=playwright-api.config.ts"
   },
   "dependencies": {
     "@angular/animations": "^14.2.12",
