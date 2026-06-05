@@ -4,6 +4,7 @@ import {
   GoalStatus,
   LoginPayload,
   RegisterPayload,
+  UpdateProfilePayload,
 } from '../types';
 
 const DEFAULT_PASSWORD = 'TestPassword123!';
@@ -25,6 +26,16 @@ export function buildLoginPayload(overrides: Partial<LoginPayload> = {}): LoginP
   return {
     email: uniqueEmail('login'),
     password: DEFAULT_PASSWORD,
+    ...overrides,
+  };
+}
+
+export function buildUpdateProfilePayload(overrides: Partial<UpdateProfilePayload> = {}): UpdateProfilePayload {
+  return {
+    name: 'Updated QA User',
+    email: uniqueEmail('update'),
+    oldPassword: DEFAULT_PASSWORD,
+    newPassword: 'NewPassword456!',
     ...overrides,
   };
 }

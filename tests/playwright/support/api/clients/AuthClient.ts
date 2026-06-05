@@ -8,9 +8,9 @@ export class AuthClient extends BaseApiClients {
     }
 
     async login(payload:LoginPayload ): Promise<APIResponse> {
-        return this.post('/auth/login', { payload });
+        return this.post('/auth/login', payload);
     }
 
     async updateProfile(payload: UpdateProfilePayload): Promise<APIResponse> {
-        return this.patch('/auth/updateprofile', { payload });
+        return this.patch('/auth/updateprofile', payload);
     }}
