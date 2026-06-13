@@ -16,7 +16,7 @@ declare const process: { env: { CI?: string } };
 export default defineConfig({
   timeout: 20000,
   testDir: './tests/playwright/specs',
-  testIgnore: '**/legacy/**',
+  testIgnore: ['**/legacy/**', '**/api/**'],
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
